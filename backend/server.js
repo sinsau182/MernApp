@@ -8,6 +8,9 @@ const userRoute = require("./routes/userRoute")
 
 app.use(express.json());
 
+const cors = require("cors");
+app.use(cors());
+
 
 const mongoose = require("mongoose")
 mongoose.connect(process.env.URI)
