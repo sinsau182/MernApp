@@ -1,4 +1,3 @@
-import './App.css';
 import Create from './Components/Create';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
@@ -7,7 +6,7 @@ import Update from './Components/Update';
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-center">
       <Router>
         <Navbar />
         <Routes>
