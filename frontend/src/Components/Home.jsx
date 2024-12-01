@@ -9,7 +9,7 @@ const Home = () => {
   async function getData() {
 
     try {
-      const response = await axios.get('http://localhost:4000/');
+      const response = await axios.get('http://localhost:4000/api/v4');
       console.log(response.data);
       setData(response.data);
 
@@ -25,7 +25,7 @@ const Home = () => {
 
 const handleDelete = async (id) => {
   try {
-    const response = await axios.delete(`http://localhost:4000/${id}`);
+    const response = await axios.delete(`http://localhost:4000/api/v4/${id}`);
     getData();
     setError("Deleted Successfully");
     setTimeout(() => {

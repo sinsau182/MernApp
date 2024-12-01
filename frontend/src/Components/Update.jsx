@@ -15,7 +15,7 @@ const Update = () => {
   const getSingleUser = async () => {
 
     try {
-      const response = await axios.get(`http://localhost:4000/${id}`);
+      const response = await axios.get(`http://localhost:4000/api/v4/${id}`);
       console.log(id);
       setName(response.data.name);
       setEmail(response.data.email);
@@ -34,8 +34,11 @@ const Update = () => {
     e.preventDefault();
     const updatedUser = {name, email, age}
 
+
     try {
-        const response = await axios.patch(`http://localhost:4000/${id}`, updatedUser);
+      console.log(updatedUser);
+        const response = await axios.patch(`http://localhost:4000/api/v4/${id}`, updatedUser);
+
         console.log(response.data);
         navigate("/all");
 

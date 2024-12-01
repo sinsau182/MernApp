@@ -65,11 +65,10 @@ router.delete("/:id", async(req, res) => {
 
 router.patch("/:id", async(req,res) => {
     const {id} = req.params;
-    const {name, email, age} = req.body;
 
     try {
         const updateUser = await User.findByIdAndUpdate(id, req.body, {
-            new:true,
+            new:true
         });
         res.status(200).json(updateUser);
     } catch (error) {

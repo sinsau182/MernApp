@@ -18,7 +18,7 @@ const Create = () => {
         const newUser = {name, email, age}
 
         try {
-            const response = await axios.post('http://localhost:4000/', newUser);
+            const response = await axios.post('http://localhost:4000/api/v4', newUser);
             console.log(response.data);
             setName('');
             setEmail('');
