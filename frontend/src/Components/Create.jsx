@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Create = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState('');
 
     const [error, setError] = useState("");
 
