@@ -58,35 +58,57 @@ const Update = () => {
 
   return (
     <div>
-      <div className='container my-2'>
-      {error && <div class="alert alert-danger" >{error}</div>}
-        <h2 className='text-center'>Edit your Data</h2>
+  <div className="container my-4 p-4" style={{ maxWidth: "600px", backgroundColor: "#f9f9f9", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
+    {error && (
+      <div className="alert alert-danger" role="alert">
+        {error}
+      </div>
+    )}
+    <h2 className="text-center mb-4" style={{ color: "#333", fontWeight: "600" }}>Edit Your Data</h2>
 
-        <form onSubmit={handleUpdate} >
-        <div className="mb-3">
-    <label className="form-label">Name</label>
-    <input type="text" className="form-control" 
-    value={name}
-    onChange={(e) => setName(e.target.value)}/>
+    <form onSubmit={handleUpdate}>
+      <div className="mb-3">
+        <label className="form-label" style={{ fontWeight: "500" }}>Name</label>
+        <input
+          type="text"
+          className="form-control"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          style={{ padding: "10px", borderRadius: "6px" }}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label" style={{ fontWeight: "500" }}>Email Address</label>
+        <input
+          type="email"
+          className="form-control"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={{ padding: "10px", borderRadius: "6px" }}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label" style={{ fontWeight: "500" }}>Age</label>
+        <input
+          type="number"
+          className="form-control"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          onFocus={(e) => e.target.select()}
+          style={{ padding: "10px", borderRadius: "6px" }}
+        />
+      </div>
+      <button
+        type="submit"
+        className="btn btn-primary w-100"
+        style={{ padding: "10px", fontWeight: "500", borderRadius: "6px" }}
+      >
+        Submit
+      </button>
+    </form>
   </div>
-  <div className="mb-3">
-    <label className="form-label">Email address</label>
-    <input type="email" className="form-control" 
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}/>
-  </div>
-  <div className="mb-3">
-    <label className="form-label">Age</label>
-    <input type="number" className="form-control" 
-    value={age} 
-    onChange={(e) => setAge(e.target.value)}
-    onFocus={(e) => e.target.select()} />
-  </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
-</form>
-      
-    </div>
-    </div>
+</div>
+
   )
 }
 

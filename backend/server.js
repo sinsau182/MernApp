@@ -3,8 +3,8 @@ const app = express();
 
 app.use(express.json());
 
-const cors = require("cors");
-app.use(cors());
+const cors = require("cors");    //not required
+app.use(cors());                 //not required
 
 const path = require('path');
 // Serve the static files from the React app
@@ -20,8 +20,6 @@ app.get('*', (req, res) => {
 
 const dotenv = require("dotenv")
 dotenv.config();
-
-
 
 
 const mongoose = require("mongoose")
