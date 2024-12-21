@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [data, setData] = useState();
   const [error, setError] = useState("");
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   async function getData() {
     try {
-      const response = await axios.get("http://localhost:4000/api/v4");
+      const response = await axios.get(`${BASE_URL}/api/v4`);
       console.log(response.data);
       setData(response.data);
     } catch (error) {
@@ -22,7 +23,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/v4/${id}`);
+      await axios.delete(`${BASE_URL}/api/v4/${id}`);
       getData();
       setError("Deleted Successfully");
       setTimeout(() => {

@@ -7,6 +7,7 @@ const Update = () => {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [error, setError] = useState("");
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   const { id } = useParams();
 
@@ -15,7 +16,7 @@ const Update = () => {
   const getSingleUser = async () => {
 
     try {
-      const response = await axios.get(`http://localhost:4000/api/v4/${id}`);
+      const response = await axios.get(`${BASE_URL}/api/v4/${id}`);
       console.log(id);
       setName(response.data.name);
       setEmail(response.data.email);
@@ -37,7 +38,7 @@ const Update = () => {
 
     try {
       console.log(updatedUser);
-        const response = await axios.patch(`http://localhost:4000/api/v4/${id}`, updatedUser);
+        const response = await axios.patch(`${BASE_URL}/api/v4/${id}`, updatedUser);
 
         console.log(response.data);
         navigate("/all");

@@ -8,13 +8,14 @@ const Create = () => {
   const [age, setAge] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = { name, email, age };
 
     try {
-      const response = await axios.post('http://localhost:4000/api/v4', newUser);
+      const response = await axios.post(`${BASE_URL}/api/v4`, newUser);
       console.log(response.data);
       setName('');
       setEmail('');
